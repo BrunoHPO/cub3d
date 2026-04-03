@@ -15,13 +15,25 @@
 static void	free_textures(t_vars *vars)
 {
 	if (vars->map.tx_no)
+	{
 		free(vars->map.tx_no);
+		vars->map.tx_no = NULL;
+	}
 	if (vars->map.tx_so)
+	{
 		free(vars->map.tx_so);
+		vars->map.tx_so = NULL;
+	}
 	if (vars->map.tx_we)
+	{
 		free(vars->map.tx_we);
+		vars->map.tx_we = NULL;
+	}
 	if (vars->map.tx_ea)
+	{
 		free(vars->map.tx_ea);
+		vars->map.tx_ea = NULL;
+	}
 }
 
 void	free_char_array(char **array)
@@ -42,12 +54,21 @@ void	free_char_array(char **array)
 void	parse_cleanup(t_vars *vars)
 {
 	if (vars->file.path)
+	{
 		free(vars->file.path);
+		vars->file.path = NULL;
+	}
 	if (vars->file.lines)
+	{
 		free_char_array(vars->file.lines);
+		vars->file.lines = NULL;
+	}
 	free_textures(vars);
 	if (vars->map.grid)
+	{
 		free_char_array(vars->map.grid);
+		vars->map.grid = NULL;
+	}
 }
 
 void	init_vars_file(t_vars *vars)

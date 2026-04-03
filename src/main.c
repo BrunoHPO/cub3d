@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bnanque <bnanque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 11:46:41 by bolegari          #+#    #+#             */
-/*   Updated: 2026/03/14 18:16:49 by marvin           ###   ########.fr       */
+/*   Updated: 2026/04/03 14:25:13 by bnanque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,16 @@ int	main(int argc, char *argv[])
 {
 	t_vars	vars;
 
+	init_vars(&vars);
 	if (argc != 2)
 		print_error(&vars, "Wrong Input, eg. ./cub3D <MAP_FILE.cub>");
 	vars.file.path = trim_spaces(argv[1]);
-	init_vars(&vars);
 	parse_file(&vars);
 	parse_assets(&vars);
 	handle_map(&vars);
 	check_map(&vars);
 	parse_debug(&vars);
+	run_game(&vars);
 	parse_cleanup(&vars);
 	return (0);
 }
