@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bnanque <bnanque@student.42.fr>            +#+  +:+       +#+         #
+#    By: bolegari <bolegari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/14 09:52:57 by bolegari          #+#    #+#              #
-#    Updated: 2026/03/28 16:45:47 by bnanque          ###   ########.fr        #
+#    Updated: 2026/04/03 15:06:12 by bolegari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,10 +79,6 @@ all: $(NAME)
 	@echo "Build complete!"
 
 bonus: $(BONUS_OBJS)
-	@echo "Building libraries..."
-	@$(MAKE) -sC ./libft_printf_gnl
-	@$(MAKE) -sC ./minilibx-linux
-	@echo "Linking cub3D bonus executable..."
 	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(MLX_FLAGS) $(LIBFT) -o $(BONUS_NAME)
 	@echo "Bonus build complete!"
 

@@ -95,27 +95,27 @@ void	check_map(t_vars *vars)
 {
 	int		y;
 	int		x;
-	char	**ff_grid;
 
 	find_player(vars);
-	ff_grid = copy_grid(vars);
-	flood_fill_internal(ff_grid, vars->map.player_y, vars->map.player_x, vars);
-	y = 0;
-	while (y < vars->map.height)
+	vars->map.ff_grid = copy_grid(vars);
+	flood_fill_internal(vars->map.ff_grid,
+		vars->map.player_y, vars->map.player_x, vars);
+	y = -1;
+	while (++y < vars->map.height)
 	{
-		if (ff_grid[y][0] == ' ')
-			flood_fill_external(ff_grid, y, 0, vars);
-		if (ff_grid[y][vars->map.width - 1] == ' ')
-			flood_fill_external(ff_grid, y, vars->map.width - 1, vars);
+		if (vars->map.ff_grid[y][0] == ' ')
+			flood_fill_external(vars->map.ff_grid, y, 0, vars);
+		if (vars->map.ff_grid[y][vars->map.width - 1] == ' ')
+			flood_fill_external(vars->map.ff_grid, y,
+				vars->map.width - 1, vars);
 		x = 1;
 		while (x < vars->map.width)
 		{
-			if (ff_grid[y][x] == ' ')
-				flood_fill_external(ff_grid, y, x, vars);
+			if (vars->map.ff_grid[y][x] == ' ')
+				flood_fill_external(vars->map.ff_grid, y, x, vars);
 			x++;
 		}
-		y++;
 	}
-	print_char_array(ff_grid);
-	free_char_array(ff_grid);
+	free_char_array(vars->map.ff_grid);
+	vars->map.ff_grid = NULL;
 }

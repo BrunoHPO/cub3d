@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bnanque <bnanque@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bolegari <bolegari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 09:53:57 by bolegari          #+#    #+#             */
-/*   Updated: 2026/04/03 14:34:09 by bnanque          ###   ########.fr       */
+/*   Updated: 2026/04/03 14:50:33 by bolegari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ typedef struct s_map
 	int			cl_ceiling;
 	int			map_start_i;
 	char		**grid;
+	char		**ff_grid;
 	int			width;
 	int			height;
 	int			player_count;

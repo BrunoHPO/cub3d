@@ -6,7 +6,7 @@
 /*   By: bolegari <bolegari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 11:31:34 by bolegari          #+#    #+#             */
-/*   Updated: 2026/03/14 09:41:32 by bolegari         ###   ########.fr       */
+/*   Updated: 2026/04/03 16:20:21 by bolegari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	parse_cleanup(t_vars *vars)
 		free_char_array(vars->map.grid);
 		vars->map.grid = NULL;
 	}
+	if (vars->map.ff_grid)
+	{
+		free_char_array(vars->map.ff_grid);
+		vars->map.ff_grid = NULL;
+	}
 }
 
 void	init_vars_file(t_vars *vars)
@@ -87,6 +92,7 @@ void	init_vars_map(t_vars *vars)
 	vars->map.cl_floor = -1;
 	vars->map.cl_ceiling = -1;
 	vars->map.grid = NULL;
+	vars->map.ff_grid = NULL;
 	vars->map.width = 0;
 	vars->map.height = 0;
 	vars->map.player_count = 0;
