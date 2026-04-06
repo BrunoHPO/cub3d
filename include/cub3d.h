@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bolegari <bolegari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 09:53:57 by bolegari          #+#    #+#             */
-/*   Updated: 2026/04/03 14:50:33 by bolegari         ###   ########.fr       */
+/*   Updated: 2026/04/06 09:04:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,15 @@
 # define MINIMAP_EMPTY 0x333333
 # define MINIMAP_PLAYER 0x00FF00
 # define MINIMAP_PLAYER_DIR 0x00AA00
+
+typedef struct s_rect
+{
+	int	x;
+	int	y;
+	int	w;
+	int	h;
+	int	color;
+}	t_rect;
 
 typedef struct s_file
 {

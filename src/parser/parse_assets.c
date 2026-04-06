@@ -72,7 +72,7 @@ void	parse_assets(t_vars *vars)
 		}
 		if (parse_asset_line(vars, vars->file.lines[vars->file.i]))
 			assets_found++;
-		else if (is_map_line(vars->file.lines[vars->file.i], "10 "))
+		else if (is_map_line(vars->file.lines[vars->file.i], "01NSEW "))
 			break ;
 		else
 			print_error(vars, "Invalid asset");

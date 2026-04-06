@@ -1,7 +1,7 @@
 *This project has been created as part of the 42 curriculum by bolegari, bnanque.*
 
 # Cub3d
-A 42 project: a first‑person raycaster using miniLibX (MLX42), inspired by Wolfenstein 3D. The program reads a `.cub` scene, parses configuration (textures and colors), validates the map, and renders a 3D maze using ray‑casting.
+A first-person raycasting project from the 42 curriculum, built with miniLibX (MLX42) and inspired by Wolfenstein 3D. The program loads a `.cub` scene file, parses texture and color configurations, validates the map, and renders a 3D maze using a raycasting algorithm.
 
 ## Description
 **Specification goals (cub3d.pdf)**
@@ -19,7 +19,6 @@ A 42 project: a first‑person raycaster using miniLibX (MLX42), inspired by Wol
    
 ## Instructions
 **Build**
-enter the project folder then
 ```bash
 make
 make bonus
@@ -93,7 +92,10 @@ Main modules:
 3. `src/bonus/`: files responsible for the bonuses.
 
 ## Bonus
-The mandatory part of the project was implemented and just 3 out of 5 bonuses was done: Wall collisions, a minimap system and rotate the point of view with the mouse.
+The mandatory part of the project was implemented and Three bonus features were implemented:
+- Wall collisions
+- Minimap
+- Mouse-based camera rotation
 
 ## Resources
 **Classic references**

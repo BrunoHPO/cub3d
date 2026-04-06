@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bolegari <bolegari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 09:52:39 by bolegari          #+#    #+#             */
-/*   Updated: 2026/03/14 09:52:40 by bolegari         ###   ########.fr       */
+/*   Updated: 2026/04/06 09:03:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	parse_map(t_vars *vars)
 	while (vars->file.lines[vars->file.i])
 	{
 		if (line_content_checker(vars->file.lines[vars->file.i]))
-			print_error(vars, "It is not allowed empty line");
+			break ;
 		if (!is_map_line(vars->file.lines[vars->file.i], "01NSEW "))
 			print_error(vars, "Map must contain these chars: 0,1,N,S,E,W");
 		len = ft_strlen(vars->file.lines[vars->file.i]);
@@ -68,6 +68,14 @@ static void	parse_map(t_vars *vars)
 		vars->file.i++;
 	}
 	vars->map.height = vars->file.i - vars->map.map_start_i;
+	if (vars->map.height == 0)
+		print_error(vars, "Map not found");
+	while (vars->file.lines[vars->file.i])
+	{
+		if (!line_content_checker(vars->file.lines[vars->file.i]))
+			print_error(vars, "Invalid content after map");
+		vars->file.i++;
+	}
 }
 
 void	handle_map(t_vars *vars)

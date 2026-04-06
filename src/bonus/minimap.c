@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bnanque <bnanque@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 11:53:43 by bnanque           #+#    #+#             */
-/*   Updated: 2026/03/28 11:53:43 by bnanque          ###   ########.fr       */
+/*   Updated: 2026/04/06 09:04:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-typedef struct s_rect
-{
-	int	x;
-	int	y;
-	int	w;
-	int	h;
-	int	color;
-}t_rect;
 
 static void	draw_player_dir(t_vars *vars, int px, int py, int cell)
 {
